@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+// import { Footer } from './Component/Footer/Footer';
+import { Header } from './Component/Header/Header';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import Main from './Container/Main';
+import { Route, Routes } from 'react-router-dom';
+import  PopulerMovies  from './Container/PopulerMovies';
+import TopRatedMovies from './Container/TopRatedMovies';
+import  MovieDetails  from './Container/MovieDetails';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={store}>
+        <Header/>
+        <Routes>
+          <Route path='/' element={<Main/>}/>
+          <Route path='/PopulerMovies' element={<PopulerMovies/>}/>
+          <Route path='/TopRatedMovies' element={<TopRatedMovies/>}/>
+          <Route path='/MovieDetails/:id' element={<MovieDetails/>}/>
+        </Routes>
+      </Provider>
     </div>
   );
 }

@@ -1,0 +1,3 @@
+export const FATCH_USERS_REQUEST_TopRated = 'FATCH_USERS_REQUEST_TopRated'
+export const FATCH_USERS_SUCCESS_TopRated = 'FATCH_USERS_SUCCESS_TopRated'
+export const FATCH_USERS_FAILURE_TopRated = 'FATCH_USERS_FAILURE_TopRated'
